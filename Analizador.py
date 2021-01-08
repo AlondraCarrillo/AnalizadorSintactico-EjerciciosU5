@@ -56,4 +56,4 @@ def t_error(t):
 
 analizador = lex.lex()
 
-#analizador.input(cadena)
+#analizador.input(cadena) 
