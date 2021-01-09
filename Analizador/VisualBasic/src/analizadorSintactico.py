@@ -17,7 +17,7 @@ precedence = (
 	('left','MENORQ','MAYORQ'),
 	('left','SUMA','RESTA'),
 	('left','MULTI','DIV'),
-	#('right','ODD'),
+	('right','WHILE'),
 	('right','PUNTO'),
 	('left','PIZQ','PDER'),
 	('left','LLIZQ','LLDER'),
@@ -124,9 +124,9 @@ def p_statement5(p):
 	'statement : IMPORTS ID'
 	print ("statement 5")
 
-#def p_statement5(p):
-#	'''statement : WHILE condition DO statement'''
-	#print "statement 5"
+def p_statement6(p):
+	'''statement : WHILE '''
+	print ("statement 6 WHILE")
 
 def p_statementEmpty(p):
 	'''statement : empty'''
@@ -219,15 +219,15 @@ def p_expression11(p):
 
 def p_addingOperator1(p):
 	'''addingOperator : SUMA'''
-	print ("addingOperator 1")
+	print ("SUMA 1")
 
 def p_addingOperator2(p):
 	'''addingOperator : RESTA'''
-	print ("addingOperator 1")
+	print ("RESTA 1")
 
 def p_addingOperator3(p):
 	'''addingOperator : MOD'''
-	print ("addingOperator 2")
+	print ("addingOperator MOD")
 
 def p_term1(p):
 	'''term : factor'''
@@ -247,11 +247,11 @@ def p_multiplyingOperator2(p):
 
 def p_factor1(p):
 	'''factor : ID'''
-	print ("factor 1")
+	print ("ID")
 
 def p_factor2(p):
 	'''factor : NUMERO'''
-	print ("factor 2")
+	print ("NUMERO")
 
 def p_factor3(p):
 	'''factor : PIZQ expression PDER'''
@@ -295,8 +295,8 @@ def buscarFicheros(directorio):
 
 	return files[int(numArchivo)-1]
 
-direccion ='C:/Users/Marco/Documents/test/'
-#direccion = 'C:/Users/Marco/OneDrive/Documentos/ITSVA/5°Semestre/LENGUAJES Y AUTOMATAS/Tema4/EjerciciosSintactico/Analizador/VisualBasic/pruebas'
+#direccion ='C:/Users/Marco/Documents/test/'
+direccion = 'C:/Users/bodega/Desktop/LENGUAJES Y AUTOMATAS LEONEL/UNIDAD 5/AnalizadorSintactico-EjerciciosU5/Analizador/VisualBasic/pruebas/'
 archivi = buscarFicheros(direccion)
 prueba = direccion+archivi
 fp = codecs.open(prueba, "r", "utf-8")
